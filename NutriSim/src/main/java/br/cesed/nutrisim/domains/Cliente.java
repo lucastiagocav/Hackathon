@@ -2,6 +2,8 @@ package br.cesed.nutrisim.domains;
 
 import java.util.List;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+@Document
 public class Cliente {
 	private String id;
 	private Usuario usuario;

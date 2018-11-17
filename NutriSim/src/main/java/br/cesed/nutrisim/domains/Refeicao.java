@@ -3,6 +3,8 @@ package br.cesed.nutrisim.domains;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+@Document
 public class Refeicao {
 	private Categoria categoria;
 	private List<Alimento> alimentos;

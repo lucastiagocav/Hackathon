@@ -4,7 +4,6 @@ public class Alimento {
 	private int id;
 	private String description;
 	private int energy;
-
 	private int carbohydrate;
 	private int protein;
 	private int lipid;

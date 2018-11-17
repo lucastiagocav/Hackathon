@@ -1,5 +1,11 @@
 package br.cesed.nutrisim.domains;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
+/*{"id":"1", "email":"lucas@gmail.com","senha":"123456"}
+ * 
+ */
 public class Usuario {
 	private String id;
 	private String email;
