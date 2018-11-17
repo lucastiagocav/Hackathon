@@ -6,27 +6,35 @@ import java.util.List;
 import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class Refeicao {
-	private Categoria categoria;
 	private List<Alimento> alimentos;
 	private String id;
+	private String tipo;
 	private int valorCal;
 	private int valorCarb;
 	private int valorProt;
 	private int valorLip;
 	private Date data;
+	private int quantidade;
 
+	public int getQuantidade() {
+		return quantidade;
+	}
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
+	}
+	public String getTipo() {
+		return tipo;
+	}
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
 	public Date getData() {
 		return data;
 	}
 	public void setData(Date data) {
 		this.data = data;
 	}
-	public Categoria getCategoria() {
-		return categoria;
-	}
-	public void setCategoria(Categoria categoria) {
-		this.categoria = categoria;
-	}
+
 	public Refeicao() {
 		
 	}
@@ -38,10 +46,10 @@ public class Refeicao {
 	public void getTotal() {
 		for (int i = 0; i < alimentos.size(); i++) {
 			if(alimentos.get(i) != null) {
-				this.valorCal += alimentos.get(i).getEnergy() ;
-				this.valorCarb += alimentos.get(i).getCarbohydrate() ;
-				this.valorProt += alimentos.get(i).getProtein();
-				this.valorLip += alimentos.get(i).getLipid();
+				this.valorCal += alimentos.get(i).getEnergy() * quantidade;
+				this.valorCarb += alimentos.get(i).getCarbohydrate() * quantidade ;
+				this.valorProt += alimentos.get(i).getProtein() * quantidade;
+				this.valorLip += alimentos.get(i).getLipid() * quantidade;
 				
 			}
 		}

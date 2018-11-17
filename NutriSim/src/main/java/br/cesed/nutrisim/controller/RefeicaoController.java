@@ -31,27 +31,27 @@ public class RefeicaoController {
 	
 
 	@GetMapping("/")
-	public ResponseEntity<List<Refeicao>> listarClientes() {
+	public ResponseEntity<List<Refeicao>> listarRefeicoes() {
 		return new ResponseEntity<List<Refeicao>>(service.listRefeicao(), HttpStatus.OK);
 	}
 	@GetMapping("/{id}")
-	public ResponseEntity<Refeicao> buscarClienteId(@PathVariable String id) {
+	public ResponseEntity<Refeicao> buscarRefeicaoId(@PathVariable String id) {
 		return new ResponseEntity<Refeicao>(service.listRefeicaoId(id), HttpStatus.OK);
 	}
 	@PostMapping("/")
-	public ResponseEntity<Refeicao> criarCliente(@RequestBody Refeicao refeicao) {
+	public ResponseEntity<Refeicao> criarRefeicao(@RequestBody Refeicao refeicao) {
 		return new ResponseEntity<Refeicao>(service.createRefeicao(refeicao), HttpStatus.CREATED);
 	}
 	@PutMapping("/{id}")
-	public ResponseEntity<Refeicao> atualizarCliente(@PathVariable String id, @RequestBody Refeicao refeicao) {
+	public ResponseEntity<Refeicao> atualizarRefeicao(@PathVariable String id, @RequestBody Refeicao refeicao) {
 		if(service.listRefeicaoId(id) != null) {
 			return new ResponseEntity<Refeicao>(service.updateRefeicao(refeicao, id), HttpStatus.OK);
 		}
 		return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 	}
 	@DeleteMapping("/{id}")
-	public ResponseEntity<Usuario> deletarCliente(@PathVariable String id) {
-		service.deleteRefeicao(id);
+	public ResponseEntity<Usuario> deletarAlimento(@PathVariable int id) {
+		service.deleteAlimento(id);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 }

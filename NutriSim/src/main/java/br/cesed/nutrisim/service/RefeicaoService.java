@@ -39,4 +39,8 @@ public class RefeicaoService {
 	public void deleteRefeicao(String id) {
 		repository.deleteById(id);
 	}
+
+	public void deleteAlimento(int id) {
+		
+	}
 }
